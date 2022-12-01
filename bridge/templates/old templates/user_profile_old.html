@@ -1,0 +1,30 @@
+{% include 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+<style>
+    .user-profile-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+</style>
+<img src="{% static 'images/silver.jpg' %}" />
+<h1>{{ user.username }}</h1>
+{% if user.is_active %}
+<small>Active now </small>
+{% else %}
+<small> Not active now</small>
+{% endif %}
+<div class="user-profile-container">
+    <div>
+        {% include 'topics_component.html' %}
+    </div>
+    <div>
+        {% include 'feed_component.html' %}
+    </div>
+    <div>
+        {% include 'activities_component.html' %}
+    </div>
+</div>
+{% endblock content %}

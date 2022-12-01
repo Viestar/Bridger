@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>messages</title>
+</head>
+
+<body>
+
+    {% block content %}
+
+    <h2>Message TEMPLATE</h2>
+
+    <h1><a href="{% url 'message' message.id %}">{{ message.id}}</a></h1>
+
+    {% endblock content %}
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Welcome to Bridger</h1>
+<div class="header-container">
+    <h1>Social Online School</h1>
+</div>
+
+<div>
+    <div>
+        <h3>Create a classroom and feel our <em>On-Campus-Experience-Online</em></h3>
+    </div>
+</div>
+
+
+<div class="home-container">
+    <div class="topics-fraction">
+        {% include 'topics_component.html' %}
+    </div>
+
+
+    <div class="rooms-fraction">
+        <a href="{% url 'create-room' %}">Create study room</a>
+        <h3>Join already created {{room_count}} classrooms</h3>
+        <form action="{% url 'home' %}">
+            <input type="text" name="q" placeholder="Search for classrooms">
+        </form>
+        <div>
+            {% include 'feed_component.html' %}
+        </div>
+    </div>
+
+
+    <div class="activity-fraction">
+        {% include 'activities_component.html' %}
+    </div>
+</div>
+
+
+<style>
+    .home-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        margin: 10px;
+        background-image: calc();
+
+    }
+
+    .topics-fraction {
+        margin: 0px;
+        background-color: rgb(241, 209, 130);
+    }
+
+    .rooms-fraction {
+        margin: 0px;
+        background-color: rgb(241, 238, 215);
+
+    }
+
+    .activity-fraction {
+        margin: 0px;
+        background-color: rgb(241, 209, 130);
+    }
+</style>
+{% endblock content %}
