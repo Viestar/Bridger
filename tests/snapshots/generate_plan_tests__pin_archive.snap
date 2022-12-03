@@ -1,0 +1,19 @@
+---
+source: tests/generate_plan_tests.rs
+expression: plan
+---
+{
+  "providers": [],
+  "buildImage": "[build_image]",
+  "variables": {
+    "NIXPACKS_START_CMD": "./start.sh"
+  },
+  "phases": {
+    "setup": {
+      "name": "setup"
+    }
+  },
+  "start": {
+    "cmd": "./start.sh"
+  }
+}
