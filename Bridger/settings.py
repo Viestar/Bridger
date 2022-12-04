@@ -91,11 +91,11 @@ WSGI_APPLICATION = 'Bridger.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': 'db',
-        'PORT': 5432,
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'Sk60W2ay7tL4YljpmhWT',
+        'HOST': 'containers-us-west-133.railway.app',
+        'PORT': 6184,
     }
 }
 # Password validation
