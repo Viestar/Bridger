@@ -7,9 +7,11 @@ from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
 from .models import *
 from .forms import *
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Login page
+@csrf_exempt
 def loginPage(request):
     page = 'login'
     if request.user.is_authenticated:
@@ -34,7 +36,7 @@ def loginPage(request):
     context = {'page': page}
     return render(request, 'login_register.html', context)
 
-
+@csrf_exempt
 @login_required(login_url='login')
 def user_profile(request, pk):
     # user = get_user_model()
@@ -64,7 +66,7 @@ def logoutuser(request):
     logout(request)
     return redirect('home')
 
-
+@csrf_exempt
 def register_user(request):
     form = MyUserCreationForm()
     if request.method == 'POST':
