@@ -48,7 +48,7 @@ def user_profile(request, pk):
                'room_messages': room_messages}
     return render(request, 'user_profile.html', context)
 
-
+@csrf_exempt
 @login_required(login_url='login')
 def update_profile(request):
     user = request.user
@@ -120,7 +120,7 @@ def room(request, pk):
                "participants": participants}
     return render(request, 'room.html', context)
 
-
+@csrf_exempt
 @login_required(login_url="login")
 def createRoom(request):
     topics = Topic.objects.all()
@@ -141,7 +141,7 @@ def createRoom(request):
     context = {'form': form, 'topics': topics}
     return render(request, 'room_form.html', context)
 
-
+@csrf_exempt
 @login_required(login_url="login")
 def updateRoom(request, pk):
     room = Room.objects.get(id=pk)
